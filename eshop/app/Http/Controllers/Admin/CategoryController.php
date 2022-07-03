@@ -6,10 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class CategoryController extends Controller
 {
     public function index(){
-        return view('admin.category.index');
+        $category = Category::all();
+        return view('admin.category.index', compact('category'));
     }
     public function add(){
         return view('admin.category.add');
