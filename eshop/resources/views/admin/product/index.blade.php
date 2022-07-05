@@ -11,8 +11,9 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Category</th>
                 <th>Name</th>
-                <th>Description</th>
+                <th>Selling Price</th>
                 <th>Image</th>
                 <th>Action</th>
             </tr>
@@ -22,14 +23,15 @@
                 
             <tr>
                 <td>{{$item->id}}</td>
+                <td>{{$item->category->name}}</td>
                 <td>{{$item->name}}</td>
-                <td>{{$item->description}}</td>
+                <td>{{$item->selling_price}}</td>
                 <td>
                    <img src="{{ asset('assets/uploads/products/'.$item->image) }}" class="cate-image" alt="Product image">
                 </td>
                 <td>
-                    <a class="btn btn-primary" href="#">Edit</a>
-                    <a class="btn btn-danger" href="#">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="{{ url('edit-product/'.$item->id) }}">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="#">Delete</a>
                 </td>
             </tr>
 
