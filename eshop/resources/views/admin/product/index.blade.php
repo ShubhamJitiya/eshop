@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="{{ url('edit-product/'.$item->id) }}">Edit</a>
-                    <a class="btn btn-danger btn-sm" href="#">Delete</a>
+                    <a class="btn btn-danger btn-sm" href="{{ url('delete-product/'.$item->id) }}">Delete</a>
                 </td>
             </tr>
 
