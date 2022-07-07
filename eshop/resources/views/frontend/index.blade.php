@@ -36,7 +36,8 @@
                     @foreach ($trending_categories as $tcategory)
                     
                     <div class="item">
-                        <div class="card">
+                        <a href="{{ url('view-category/'.$tcategory->slug) }}">
+                            <div class="card">
                             <img src="{{ asset('assets/uploads/category/'.$tcategory->image)}}" alt="Product image">
                             <div class="card-body">
                                 <h5>{{$tcategory -> name}}</h5>
@@ -45,6 +46,7 @@
                                 </p>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endforeach
                 </div>
